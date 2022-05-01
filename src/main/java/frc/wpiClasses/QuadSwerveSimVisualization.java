@@ -87,7 +87,7 @@ public class QuadSwerveSimVisualization {
     public void update(Pose2d chassisPose){
 
         for(int i = 0; i < 4; i++){
-            m_modAzmthAngInd.get(i).setAngle(m_modules.get(i).getAzimuthEncoderPositionRev()*360.0 + 90);
+            m_modAzmthAngInd.get(i).setAngle(m_modules.get(i).getAzimuthModulePositionRev()*360.0 + 90);
         }
 
 

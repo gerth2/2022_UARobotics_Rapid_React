@@ -152,9 +152,6 @@
       "SimSwerveModule_BL": {
         "open": true
       },
-      "SwerveSimModuleVisualization": {
-        "open": true
-      },
       "open": true
     },
     "limelight": {
@@ -273,6 +270,15 @@
                 1.0
               ],
               "id": "NT:/SmartDashboard/SimSwerveModule_BL/AzmthEncPosRev"
+            },
+            {
+              "color": [
+                0.5526835918426514,
+                0.8143459558486938,
+                0.3745304346084595,
+                1.0
+              ],
+              "id": "NT:/SmartDashboard/BLSteerAngle_rev"
             }
           ],
           "viewTime": 60.0

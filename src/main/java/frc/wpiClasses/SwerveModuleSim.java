@@ -98,7 +98,17 @@ public class SwerveModuleSim implements Sendable{
      *  positive direction, this will return 2.5 (not 0.5).
      */
     public double getAzimuthEncoderPositionRev() {
-        return m_azmthMotor.getMechanismPositionRev() * m_azimuthEncGearRatio;
+        return getAzimuthModulePositionRev() * m_azimuthEncGearRatio;
+    }
+
+    /**
+     * @return Returns the current physical rotation count of the azimuth module axle 
+     * shaft in total rotations since last reset - not wrapped. 
+     * IE, if you spin your module exactly two and a half times in the
+     *  positive direction, this will return 2.5 (not 0.5).
+     */
+    public double getAzimuthModulePositionRev() {
+        return m_azmthMotor.getMechanismPositionRev();
     }
 
     /**
@@ -230,7 +240,7 @@ public class SwerveModuleSim implements Sendable{
     @Override
     public void initSendable(SendableBuilder builder) {
         builder.addDoubleProperty("WheelEncVelRPM", this::getAzimuthEncoderVelocityRPM, null);
-        builder.addDoubleProperty("AzmthEncPosRev", this::getAzimuthEncoderPositionRev, null);
+        builder.addDoubleProperty("AzmthModPosRev", this::getAzimuthModulePositionRev, null);
         builder.addDoubleProperty("WheelMotorVoltage", this::getWheelMotorVoltage, null);
         builder.addDoubleProperty("AzmthMotorVoltage", this::getAzmthMotorVoltage, null);
         
